@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:StudentEmployee xmlns:tns="http://www.example.org/studentXMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/studentXMLSchema studentXMLSchema.xsd ">
+  <tns:Studid>10</tns:Studid>
+  <tns:StudentName>HCL</tns:StudentName>
+  <tns:marks>99.9</tns:marks>
+</tns:StudentEmployee>

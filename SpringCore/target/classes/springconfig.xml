@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:mvc="http://www.springframework.org/schema/mvc"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd" default-lazy-init="true">
+        
+<context:component-scan base-package="com"></context:component-scan>  
+
+<!-- 	<bean id="employee" class="com.model.Employee" >
+	<constructor-arg name="empNo" value="12" ></constructor-arg>
+	<constructor-arg  value="keer" ></constructor-arg>
+	<constructor-arg index="2" value="4500"></constructor-arg>
+	<property name="empName" value="god"></property>
+	<property name="empNo" value="123"></property>
+	<property name="salary" value="50000"></property>
+	<property name="address" ref="address"></property>
+	</bean>
+	
+	<bean id="address" class="com.model.Address" >
+	<property name="doorNo" value="433"></property>
+	<property name="street" value="asdf"></property>
+	<property name="city" value="ghhh"></property>
+	</bean>
+	<bean id="hello" class="com.model.MyAbstract" abstract="true" >
+	</bean> -->
+</beans>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/studentXMLSchema" xmlns:tns="http://www.example.org/studentXMLSchema" elementFormDefault="qualified">
+
+    <element name="StudentEmployee" type="tns:StudentType"></element>
+    
+    <complexType name="StudentType">
+    	<sequence>
+    		<element name="Studid" type="int"></element>
+    		<element name="StudentName" type="string"></element>
+    		<element name="marks" type="float"></element>
+    		
+    	</sequence>
+    </complexType>
+</schema>

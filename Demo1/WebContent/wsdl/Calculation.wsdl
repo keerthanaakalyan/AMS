@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://com" xmlns:intf="http://com" xmlns:tns1="http://model.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://model.com"/>
+   <element name="getEmployeeById">
+    <complexType>
+     <sequence>
+      <element name="empNo" type="xsd:long"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEmployeeByIdResponse">
+    <complexType>
+     <sequence>
+      <element name="getEmployeeByIdReturn" type="tns1:Employee"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getSalary">
+    <complexType>
+     <sequence>
+      <element name="empName" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getSalaryResponse">
+    <complexType>
+     <sequence>
+      <element name="getSalaryReturn" type="tns1:Employee"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://model.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="Employee">
+    <sequence>
+     <element name="employeeId" type="xsd:long"/>
+     <element name="employeeName" nillable="true" type="xsd:string"/>
+     <element name="sal" type="xsd:float"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getSalaryResponse">
+
+      <wsdl:part element="impl:getSalaryResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSalaryRequest">
+
+      <wsdl:part element="impl:getSalary" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEmployeeByIdRequest">
+
+      <wsdl:part element="impl:getEmployeeById" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEmployeeByIdResponse">
+
+      <wsdl:part element="impl:getEmployeeByIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Calculation">
+
+      <wsdl:operation name="getEmployeeById">
+
+         <wsdl:input message="impl:getEmployeeByIdRequest" name="getEmployeeByIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getEmployeeByIdResponse" name="getEmployeeByIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSalary">
+
+         <wsdl:input message="impl:getSalaryRequest" name="getSalaryRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getSalaryResponse" name="getSalaryResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CalculationSoapBinding" type="impl:Calculation">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getEmployeeById">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getEmployeeByIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getEmployeeByIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSalary">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSalaryRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSalaryResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CalculationService">
+
+      <wsdl:port binding="impl:CalculationSoapBinding" name="Calculation">
+
+         <wsdlsoap:address location="http://localhost:8086/Demo1/services/Calculation"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
